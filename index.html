@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .section-content {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 60px 0 100px;
+            text-transform: uppercase;
+            font-size: large;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 200px;
+            height: 3px;
+            display: block;
+            margin: 5px auto 0;
+            border-radius: 20px;
+            background: yellow;
+        }
+
+
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 5;
+            background-color: rgb(138, 95, 25);
+        }
+
+        header .navbar {
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .nav-logo .nav-hinhanh {
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .navbar .nav-logo .logo-text {
+            color: rgb(52, 39, 39);
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-menu {
+
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-menu .nav-link {
+            padding: 10px 18px;
+            color: aliceblue;
+            font-size: 15px;
+            border-radius: 30px;
+            transition: 0.5s;
+        }
+
+        .navbar .nav-menu .nav-link:hover {
+            color: red;
+            background: rgb(73, 73, 15);
+        }
+
+        .hero-section {
+            min-height: 100px;
+            background: rgb(138, 95, 25);
+        }
+
+        .hero-section .section-content {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            justify-content: space-between;
+        }
+
+        .hero-section .hero-details .title {
+            color: yellow;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .hero-section .hero-details .subtitle {
+            margin-top: 8px;
+            max-width: 70%;
+            font-weight: 900;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .hero-section .hero-details .description {
+            max-width: 70%;
+            margin: 24px 0 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .hero-section .hero-details .buttons {
+            display: flex;
+            gap: 23px;
+        }
+
+        .hero-section .hero-details .button {
+            padding: 10px 20px;
+            border: 2px solid;
+            color: chocolate;
+            border-radius: 30px;
+            background: rgb(216, 216, 49);
+            font-weight: bold;
+            transition: 0.5s;
+        }
+
+        .hero-section .hero-details .button:hover,
+        .hero-section .hero-details .contact-us {
+            color: rgb(68, 177, 177);
+            border-color: aquamarine;
+            background: transparent;
+        }
+
+        .hero-section .hero-details .contact-us:hover {
+            color: chocolate;
+            border-color: chocolate;
+            background: rgb(216, 216, 49);
+        }
+
+        .hero-section .hero-image-wrapper .hero-image {
+            max-width: 500px;
+            margin-right: 30px;
+            border-radius: 50%;
+            width: 500px;
+            margin-top: 50px;
+        }
+
+        .about-section {
+            padding: 120px 0;
+            background: rgb(162, 133, 78);
+        }
+
+        .about-section .section-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-section .about-image-wrapper .about-image {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+
+        .menu-section {
+            color: white;
+            background: rgb(152, 140, 119);
+        }
+
+        .menu-section .menu-list {
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 110px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-section .menu-list .menu-item {
+            display: flex;
+            margin-bottom: 40px;
+
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            justify-content: space-between;
+            width: calc(100% / 3 - 110px);
+
+        }
+
+        .menu-section .menu-list .menu-item .menu-image {
+            max-width: 83%;
+            aspect-ratio: 1;
+        }
+
+
+        ul li {
+
+            display: inline-block;
+            font-weight: 500;
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        .sub-menu {
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-align: left;
+            display: none;
+        }
+
+        .sub-menu li {
+            margin-top: 10px;
+            line-height: 5px;
+        }
+
+        .sub-menu li:hover {
+            color: red;
+            background: rgb(73, 73, 15);
+        }
+
+        .nav-item:hover .sub-menu {
+            display: block;
+        }
+
+        /* Thông tin liên hệ  */
+        .contact-title {
+            text-align: center;
+            padding: 60px 0px 1px;
+            text-transform: uppercase;
+            font-size: large;
+            background-color: rgb(154, 131, 131);
+        }
+
+        .contact-title::after {
+            content: "";
+            width: 200px;
+            height: 3px;
+            display: block;
+            margin: 5px auto 0;
+            border-radius: 20px;
+            background: yellow;
+        }
+
+        .containerone {
+            font-family: Arial, sans-serif;
+            background-color: rgb(154, 131, 131);
+            padding: 100px 200px;
+            display: flex;
+            gap: 80px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-group h3 {
+            color: rgb(37, 100, 37);
+            margin-bottom: 10px;
+        }
+
+        .info-group {
+            padding: 0;
+            font-family: 'Courier New', cursive;
+            font-size: 20px;
+            color: rgb(87, 86, 86);
+            letter-spacing: 1.5px;
+            margin-bottom: 70px;
+        }
+
+        .info-section {
+            width: 30%;
+            height: 300px;
+        }
+
+        .info-section p {
+            font-weight: bold;
+            font-size: 15px;
+            margin: 0;
+            color: black;
+        }
+
+        .form-section {
+            border-radius: 10px;
+            background: wheat;
+            flex-grow: 1;
+            height: 320px;
+        }
+
+        .form-section h3 {
+            text-align: center;
+            color: rgb(102, 100, 100);
+            padding-bottom: 50px;
+            padding-top: 10px;
+        }
+
+        .input-group {
+            margin: 20px;
+            width: 90%;
+            height: 25px;
+            background: rgb(175, 167, 167);
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        .input-groupone {
+            margin: 20px;
+            width: 90%;
+            height: 50px;
+            background: rgb(175, 167, 167);
+            display: flex;
+            flex-direction: column;
+            border-radius: 6px;
+        }
+
+        .input-groupone label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: black;
+            margin: 5px;
+        }
+
+        .input-groupone input,
+        .input-groupone textarea {
+            border: none;
+            background: transparent;
+            padding: 5px 0;
+            outline: none;
+        }
+
+        .input-group label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: black;
+            margin: 5px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            border: none;
+            background: transparent;
+            padding: 5px;
+            outline: none;
+        }
+
+        textarea {
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: rgb(65, 174, 65);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            width: 100%;
+            letter-spacing: 3px;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: opacity 0.6s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* google map */
+
+        .map {
+            width: 100%;
+            height: 550px;
+        }
+
+        footer {
+            background-color: #4f4d46;
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+
+        footer a {
+            color: #7bc043;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+        }
+
+        .social-icons i {
+            font-size: 22px;
+            margin: 10px;
+            color: rgb(62, 61, 61);
+            background: #93d077;
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="https://th.bing.com/th/id/OIP.Ab-vkKED6NoKloHThzRD0AHaE1?w=265&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="" class="nav-hinhanh">
+                <h2 class="logo-text">Coffee Yên Bình</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Menu</a>
+                    <ul class="sub-menu">
+                        <li>Cafe</li>
+                        <li>Nước ép</li>
+                        <li>Đồ ăn vặt</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Liên hệ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="section-content">
+                <div class="hero-details">
+                    <h2 class="title">Cà Phê Ngon Nhất</h2>
+                    <h3 class="subtitle">Hãy bắt đầu ngày mới với ly cà phê đặc biệt của chúng tôi!</h3>
+                    <p class="description">Chào mừng đến với thiên đường cà phê của chúng tôi, nơi mỗi hạt cà phê đều kể
+                        một câu <br>chuyện và mỗi tách cà phê đều mang đến niềm vui.</p>
+                    <div class="buttons">
+                        <a href="#" class="button order-now">Đặt hàng ngay</a>
+                        <a href="#" class="button contact-us">Liên hệ với chúng tôi</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://th.bing.com/th/id/R.f37a703fc6945a374f0ebab4087f63b8?rik=PH%2bRf0CcD590RQ&pid=ImgRaw&r=0"
+                        alt="Hero" class="hero-image">
+                </div>
+            </div>
+        </section>
+        <section class="about-section">
+            <div class="section-content">
+                <div class="about-image-wrapper">
+                    <img src="https://hunufa.vn/wp-content/uploads/2024/11/top-nhung-hinh-anh-ly-ca-phe-sua-da-dep-nhat-67.webp"
+                        alt="Giới thiệu" class="about-image">
+                </div>
+                <div class="about-details">
+                    <h2 class="section-title">Giới thiệu về chúng tôi.</h2>
+                    <p class="text">Tại Coffee Yên Bình, chúng tôi tự hào là điểm đến lý tưởng cho những người yêu thích
+                        cà phê cũng như những
+                        người tìm kiếm những cuộc trò chuyện thú vị. Chúng tôi tận tâm mang đến trải nghiệm cà phê đặc
+                        biệt trong một không gian
+                        ấm cúng và thân thiện, nơi thực khách có thể thư giãn, thả lỏng và tận hưởng thời gian thoải mái
+                        nhất.</p>
+                </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">MENU CỦA CHÚNG TÔI</h2>
+            <div class="section-content">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <img src="https://thuytinhocean.com/wp-content/uploads/2024/08/hinh-anh-ly-cafe-sua-da-7.jpg"
+                            alt="Anh1" class="menu-iamage">
+                        <h3 class="name">Cafe sữa</h3>
+                        <p class="text">Cà phê sánh đậm tình nồng, cho lòng <br> bỗng chốc xuôi dòng mộng mơ.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://thuytinhgiare.com/wp-content/uploads/2023/07/hinh-anh-ly-cafe-den-da_21.jpg"
+                            alt="Anh2" class="menu-iamage">
+                        <h3 class="name">Cafe đen </h3>
+                        <p class="text">Một ly cà phê đậm đà, xua tan đi mọi xót xa cõi lòng.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://thuytinhgiare.com/wp-content/uploads/2023/07/hinh-anh-ly-ca-phe-muoi_24.jpg"
+                            alt="Anh3" class="menu-iamage">
+                        <h3 class="name">Cafe muối </h3>
+                        <p class="text">Hương cà phê khẽ lan xa, như lời yêu ấy thiết tha gọi về.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Caffe_Latte_at_Pulse_Cafe.jpg/250px-Caffe_Latte_at_Pulse_Cafe.jpg"
+                            alt="Anh4" class="menu-iamage">
+                        <h3 class="name">Cafe Latte</h3>
+                        <p class="text">Cà phê như giấc mơ dài, từng giọt như thắp tương lai ngọt ngào.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://blog.dktcdn.net/articles/cafe-trung.jpg" alt="Anh5" class="menu-iamage">
+                        <h3 class="name">Cafe trứng </h3>
+                        <p class="text">Hương cà phê dịu ánh tà, cho ta thêm chút thiết tha với đời.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://file.hstatic.net/200000870851/file/_2__dac_diem_va_huong_vi_cafe_cot_dua_be1951e2518d4148bf642750a9c38319_grande.jpg"
+                            alt="Anh" class="menu-iamage">
+                        <h3 class="name">Cafe cốt dừa</h3>
+                        <p class="text">Tách cà phê khởi đầu ngọt ngào cho ngày mới.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://file.hstatic.net/200000031322/file/9_93026d56b61f46c1a435755ddee3d3cd_grande.gif"
+                            alt="Anh" class="menu-iamage">
+                        <h3 class="name">Nước ép cam</h3>
+                        <p class="text">Chính là những giọt vàng lỏng quý giá.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://png.pngtree.com/png-vector/20240131/ourlarge/pngtree-a-glass-of-watermelon-juice-png-image_11525592.png"
+                            alt="Anh" class="menu-iamage">
+                        <h3 class="name">Nước ép dưa hấu</h3>
+                        <p class="text">Đẹp da, giảm nhiệt, bừng tỉnh năng lượng.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://toplist.vn/images/800px/nuoc-ep-dua-686508.jpg" alt="Anh" class="menu-iamage">
+                        <h3 class="name">Nước ép dứa</h3>
+                        <p class="text">Thanh lọc cơ thể, bừng sáng làn da.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://vinmec-prod.s3.amazonaws.com/images/20210413_135042_416025_hat_huong_duong.max-1800x1800.jpg"
+                            alt="Anh" class="menu-iamage">
+                        <h3 class="name">Hướng dương</h3>
+                        <p class="text">Hãy sống như hoa hướng dương luôn hướng về phái mặt trời.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://doiduavang.vn/wp-content/uploads/2021/02/khoai-tay-chien.jpg" alt="Anh"
+                            class="menu-iamage">
+                        <h3 class="name">Khoai tây chiên</h3>
+                        <p class="text">Đánh tan cơn buồn miệng với những miếng khoai tây chiên.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <img src="https://media.cooky.vn/recipe/g3/23568/s800x500/recipe-cover-r23568.jpg" alt="Anh"
+                            class="menu-iamage">
+                        <h3 class="name">Xoài lắc</h3>
+                        <p class="text">Xoài bao tử giòn rum, muối ớt cay nồng, lắc đều thấm vị.</p>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+        <!-- Thông tin liên hệ  -->
+        <h2 class="contact-title">THÔNG TIN LIÊN HỆ</h2>
+
+        <div class="containerone">
+            <div class="info-section">
+                <div class="info-group">
+                    <h3>Địa chỉ:</h3>
+                    <p>Vân Cát - Cẩm Vân - Thanh Hóa </p>
+                </div>
+
+                <div class="info-group">
+                    <h3>Email:</h3>
+                    <p>abcson20@gmail.com</p>
+                </div>
+
+                <div class="info-group">
+                    <h3>Điện thoại:</h3>
+                    <p>+84 362 225 438</p>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Liên hệ với chúng tôi</h3>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="input-groupone">
+                        <textarea placeholder="Message" name="" id=""></textarea>
+                    </div>
+                    <button type="submit">SUBMIT HERE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- google map -->
+
+    <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59950.33428711902!2d105.49923648094979!3d20.09663832754505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313693ce19fd180d%3A0x8f6c566e081f541a!2zQ-G6qW0gVsOibiwgQ-G6qW0gVGjhu6d5LCBUaGFuaCBIw7NhLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1771925797592!5m2!1svi!2s"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <footer>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <p> © 2026 <a href="#">Coffee Yên Bình</a>. Thiết kế <a href="#">Lê Văn Sơn</a>. <a href="#">Coffee Yên Bình
+            </a> rất hân hạnh được phục vụ quý khách.</p>
+    </footer>
+
+</body>
+
+</html>
